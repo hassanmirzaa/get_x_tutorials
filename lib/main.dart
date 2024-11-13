@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:get_x_tutorials/homepage.dart';
+import 'package:get_x_tutorials/languages.dart';
 import 'package:get_x_tutorials/screen_one.dart';
 import 'package:get_x_tutorials/screen_two.dart';
 
@@ -13,7 +14,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(theme: ThemeData(
+    return GetMaterialApp(
+      locale: Locale('en' , 'US'),
+      fallbackLocale: Locale('en' , 'US'),
+      translations: Languages(),
+      theme: ThemeData(
       appBarTheme: const AppBarTheme(
         centerTitle: true
        )

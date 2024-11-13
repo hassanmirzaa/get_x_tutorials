@@ -53,7 +53,36 @@ class _ScreenOneState extends State<ScreenOne> {
                   ),
                 ),
 
-                Text(Get.arguments[1])
+                // for height and width
+
+                Container(
+                  height: Get.height*0.2,
+                  width: Get.width*0.5,
+                  color: Colors.deepPurple,
+                  child: const Center(child: Text("Height and width with GEt x",
+                  style: TextStyle(
+                    color: Colors.white
+                  ),
+                  )),
+                ),
+
+                //For languages with getx
+                ListTile(
+                  title: Text('message'.tr),
+                  subtitle: Text('name'.tr),
+                ),
+                SizedBox(height: 50,),
+                Row(
+                  children: [
+                    OutlinedButton(onPressed: (){
+                      Get.updateLocale(Locale('en' , 'US'));
+                    }, child: Text('English')),
+                    SizedBox(width: 30,),
+                    OutlinedButton(onPressed: (){
+                      Get.updateLocale(Locale('ur' , 'PK'));
+                    }, child: Text('Urdu')),
+                  ],
+                )
           ],
         ),
       ),
